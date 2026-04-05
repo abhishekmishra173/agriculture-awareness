@@ -1,63 +1,73 @@
-# Agriculture Awareness Programs for Farmers
+# AgroBridge 🌾
 
-## 📌 Project Overview
-This project is a digital initiative designed to bridge the communication gap between farmers and agriculture officers. It serves as the **SYBCA Community Project (CA-271)** and focuses on key agricultural topics including Plantation, Soil Protection, Organic Farming, and Agro-Logistics. 
+**AgroBridge** is a dynamic, multilingual web platform built to bridge the gap between farmers, agriculture officers, and local markets. It serves as an awareness hub and functional ecosystem to promote sustainable farming, direct-to-consumer sales, and expert consultation.
 
-The primary problem this system addresses is the lack of real-time access for farmers to modern farming techniques, guidelines for transitioning to organic farming, and profitable marketing channels.
+---
 
-## 🎯 Objectives
-* To promote soil protection, biodiversity, and organic farming practices.
-* To securely connect farmers with expert agriculture officers for real-time advice.
+## 🎯 Problem Statement
+*"Agriculture - awareness programs for farmers, in association with agriculture officers on plantation and soil protection, Bio diversity, organic farming, promotion of local crops, marketing, sales and logistics for agro products etc."*
 
-## 🚀 Scope
-The platform is built to manage schedules for awareness programs, distribute crop promotion guidelines, and provide basic logistics tracking for local farmers' agro-products.
+## ✨ Key Features
 
-## 🏢 Partner Organization
-This project was conceptualized in association with the **Godavari Krishi Vikas Foundation**. 
-The organization's core activities include:
-* Conducting local field visits.
-* Testing soil quality.
-* Distributing organic seeds to farmers.
-* Organizing educational farmer seminars.
+* **🌍 Multilingual Interface:** Instant localization between English, Hindi, and Marathi without page reloads.
+* **👨‍🌾 Expert Connect:** A functional consultation portal where farmers can submit queries regarding soil, plantation, and government schemes directly to regional Agriculture Officers.
+* **🛒 Local Marketplace:** A direct-to-consumer market featuring real-time filtering (Organic vs. Standard) and dynamic rendering.
+* **📞 One-Click Logistics:** Integrated "Contact Seller" functionality that actively transforms UI buttons into clickable phone dialers (`tel:` links) for seamless buyer-to-farmer communication.
+* **📚 Awareness Hub:** Dedicated modules for Organic Farming, Bio-Diversity, and Soil Protection.
+* **📊 Live Architecture:** Integrated Mermaid.js rendering for real-time Database ER and UML Class diagrams.
+* **📱 Responsive Design:** Fully adaptive UI utilizing CSS Grid/Flexbox, glassmorphism, and scroll-triggered animations.
 
-## 👥 System Actors
-The system is designed around three primary user roles:
-1. **Farmer:** Can view upcoming awareness programs and daily crop prices.
-2. **Agriculture Officer:** Can schedule new seminars and upload soil protection guidelines.
-3. **Admin:** Oversees platform logistics and overall system management.
+---
 
-## 🛠️ Technology Stack
-* **Frontend:** HTML5, CSS3, Vanilla JavaScript (for dynamic scrolling, mobile navigation, and scroll-triggered animations).
-* **UI Design:** Responsive CSS Grid and Flexbox architecture.
-* **Database Design (Conceptual):** Relational Database mapping with SQL.
+## 🛠️ Tech Stack
 
-## 🗄️ Database Schema Design
-The system's backend data architecture revolves around the following core tables:
-* `tbl_farmers`: Stores farmer profiles `(ID, Name, Location, Contact)`.
-* `tbl_programs`: Stores awareness seminar schedules `(Prog_ID, Title, Date, Officer_ID)`.
-* `tbl_logistics`: Tracks agro-product shipments `(Log_ID, Crop_Name, Quantity, Destination)`.
+* **Frontend:** HTML5, Semantic Markup
+* **Styling:** CSS3, Custom Properties (Variables), CSS Grid & Flexbox, Smooth Transitions
+* **Logic:** Vanilla JavaScript (ES6+), DOM Manipulation
+* **Diagramming:** Mermaid.js (ESM Module)
 
-*Sample SQL Query implementation:*
-`SELECT Title, Date FROM tbl_programs WHERE Date > CURRENT_DATE;`
+---
 
-## 📊 Methodology 
-The foundational research and data collection for this system were conducted using:
-* **Surveys:** Distributing questionnaires to local farmers to understand current crop-related issues.
-* **Interviews:** Having direct discussions with agriculture officers regarding modern best practices.
-* **Observation:** Analyzing the existing, manual methods used for the agricultural supply chain and sales.
+## 📂 File Structure
 
-## 💻 Installation & Setup
-To run the front-end prototype of this project locally:
-1. Clone or download the repository.
-2. Ensure `index.html`, `style.css`, and `script.js` are in the same directory.
-3. Open `index.html` in any modern web browser (Chrome, Firefox, Edge, Safari). No local server is required for the static frontend.
+```text
+AgroBridge/
+│
+├── index.html       # The main HTML document containing all layout and diagram logic
+├── style.css        # All visual styling, animations, and responsive media queries
+├── script.js        # JavaScript logic for languages, marketplace filters, and form handling
+└── README.md        # Project documentation
+```
 
-## 🔮 Future Scope
-Digitizing this connection improves the adoption of sustainable farming. Future enhancements planned for this platform include:
-* Integrating IoT (Internet of Things) devices for live soil moisture tracking directly on the farmer's dashboard.
-* Developing and adding a dedicated e-commerce module to facilitate direct-to-consumer sales for farmers.
+---
 
-## 🎓 Academic Credits
-* **Submitted By:** Anuj Mishra.
-* **Department:** Department of Computer Application.
-* **College:** K.K. Wagh Arts, Commerce, Science and Computer Science College, Nashik.
+## 🚀 How to Run the Project
+
+Since this project is built using native web technologies (Plain HTML, CSS, JS), it requires zero installation or build steps.
+
+**Method 1: Direct Open**
+1. Download or clone the repository.
+2. Locate the folder on your computer.
+3. Double-click the `index.html` file to open it in your default web browser.
+
+**Method 2: Using VS Code (Recommended for editing)**
+1. Open the project folder in Visual Studio Code.
+2. Install the **Live Server** extension.
+3. Right-click on `index.html` and select **"Open with Live Server"**. 
+4. The project will open at `http://127.0.0.1:5500/index.html` with hot-reloading enabled.
+
+---
+
+## 📐 System Architecture
+The application architecture is documented live within the application itself using **Mermaid.js**.
+* **Entity-Relationship (ER) Diagram:** Defines the database storage models for Farmers, Crops, Officers, and Consultations.
+* **UML Class Diagram:** Defines the core operational logic, inheritance structure, and methods within the system.
+
+---
+
+## 🎓 Academic Details
+
+**SYBCA Community Project** Department of Computer Application,  
+K.K. Wagh Arts, Commerce, Science and Computer Science College  
+
+© 2026 Agriculture Awareness System

@@ -3,112 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agriculture Awareness System</title>
+    <title>AgroBridge | Community Project</title>
     <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">Godavari Krishi Vikas Foundation</div>
+        <div class="logo">AgroBridge</div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#objectives">Objectives</a></li>
-            <li><a href="#organization">Organization</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#future">Future Scope</a></li>
+            <li><a href="#home" data-key="nav_home">Home</a></li>
+            <li><a href="#awareness" data-key="nav_aware">Awareness</a></li>
+            <li><a href="#experts" data-key="nav_expert">Expert Connect</a></li>
+            <li><a href="#market" data-key="nav_market">Marketplace</a></li>
+            <li>
+                <select id="langSelect" class="lang-dropdown">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="mr">मराठी</option>
+                </select>
+            </li>
         </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content fade-in">
-            <h1>Agriculture Awareness Programs for Farmers</h1>
-            <p>A digital initiative to bridge the gap between farmers and agriculture officers.</p>
-            <p class="subtitle">Topics: Plantation, Soil Protection, Organic Farming, and Agro-Logistics</p>
-            <a href="#objectives" class="btn">Learn More</a>
+    <header id="home" class="hero">
+        <div class="hero-content reveal">
+            <h1 class="gradient-text" data-key="hero_title">Sustainable Farming for a Better Tomorrow</h1>
+            <p data-key="hero_desc">Empowering farmers with technology, expert advice, and direct market access.</p>
+            <div class="hero-btns">
+                <a href="#awareness" class="btn btn-primary" data-key="btn_start">Get Started</a>
+                <a href="#experts" class="btn btn-outline" data-key="nav_expert">Contact Officer</a>
+            </div>
         </div>
-    </section>
+    </header>
 
-    <section id="objectives" class="section bg-light">
-        <div class="container slide-up">
-            <h2 class="section-title">Objectives & Scope</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Project Objectives</h3>
-                    <ul>
-                        <li>To promote soil protection, biodiversity, and organic farming.</li>
-                        <li>To connect farmers with agriculture officers for expert advice.</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Project Scope</h3>
-                    <p>The system will manage awareness program schedules, crop promotion guidelines, and basic logistics tracking for local farmers.</p>
-                </div>
+    <section id="awareness" class="section">
+        <h2 class="section-title gradient-text reveal" data-key="nav_aware">Awareness & Programs</h2>
+        <div class="grid">
+            <div class="card reveal hover-tilt">
+                <h3 data-key="feat_organic">Organic Farming</h3>
+                <p data-key="desc_organic">Transitioning to chemical-free agriculture for better health and soil.</p>
+            </div>
+            <div class="card reveal hover-tilt" style="transition-delay: 0.1s;">
+                <h3 data-key="feat_bio">Bio-Diversity</h3>
+                <p data-key="desc_bio">Promoting local crops and protecting indigenous plant species.</p>
+            </div>
+            <div class="card reveal hover-tilt" style="transition-delay: 0.2s;">
+                <h3 data-key="feat_soil">Soil Protection</h3>
+                <p data-key="desc_soil">Techniques to prevent erosion and maintain soil fertility.</p>
             </div>
         </div>
     </section>
 
-    <section id="organization" class="section">
-        <div class="container slide-up">
-            <h2 class="section-title">Organization Profile</h2>
-            <div class="org-content">
-                <h3>Godavari Krishi Vikas Foundation</h3>
-                <p><strong>Services & Activities:</strong> Conducting field visits, testing soil, distributing organic seeds, and organizing farmer seminars.</p>
-                <div class="methodology">
-                    <h4>Methodology for Data Collection:</h4>
-                    <ul>
-                        <li><strong>Surveys:</strong> Questionnaires distributed to local farmers regarding current crop issues.</li>
-                        <li><strong>Interviews:</strong> Discussions with agriculture officers on best practices.</li>
-                        <li><strong>Observation:</strong> Analyzing existing manual methods for supply chain and sales.</li>
-                    </ul>
-                </div>
+    <section id="experts" class="section bg-light">
+        <h2 class="section-title gradient-text reveal" data-key="nav_expert">Consult an Agriculture Officer</h2>
+        <div class="form-container reveal">
+            <p style="text-align: center; margin-bottom: 20px;" data-key="form_desc">Ask a question regarding plantation, soil, or government schemes.</p>
+            
+            <form id="officerForm" onsubmit="handleFormSubmit(event)">
+                <input type="text" id="farmerName" placeholder="Your Name" required>
+                <select id="issueType" required>
+                    <option value="" disabled selected data-key="form_select">Select Issue Type</option>
+                    <option value="soil" data-key="feat_soil">Soil Protection</option>
+                    <option value="organic" data-key="feat_organic">Organic Farming Help</option>
+                    <option value="logistics" data-key="nav_logistics">Logistics/Sales</option>
+                </select>
+                <textarea id="farmerMessage" rows="4" placeholder="Describe your problem..." required></textarea>
+                <button type="submit" class="btn btn-primary w-100" data-key="form_submit">Send to Officer</button>
+            </form>
+            
+            <div id="successMessage" class="success-box">
+                ✅ <span data-key="form_success">Your request has been sent to the regional officer! They will contact you soon.</span>
             </div>
         </div>
     </section>
 
-    <section id="features" class="section bg-light">
-        <div class="container slide-up">
-            <h2 class="section-title">Platform Features</h2>
-            <div class="grid-3">
-                <div class="feature-box">
-                    <h3>Farmer Dashboard</h3>
-                    <p>View upcoming awareness programs and daily crop prices.</p>
-                </div>
-                <div class="feature-box">
-                    <h3>Officer Portal</h3>
-                    <p>Schedule seminars and upload soil protection guidelines.</p>
-                </div>
-                <div class="feature-box">
-                    <h3>Logistics Tracking</h3>
-                    <p>A simple screen to track agro-product shipments.</p>
+    <section id="market" class="section">
+        <h2 class="section-title gradient-text reveal" data-key="nav_market">Local Crop Marketplace</h2>
+        <p style="text-align: center; margin-bottom: 30px;" class="reveal" data-key="desc_sales">Direct sales and logistics for agro products.</p>
+        
+        <div class="filter-container reveal">
+            <button class="filter-btn active" onclick="filterMarket('all')" data-key="filter_all">All</button>
+            <button class="filter-btn" onclick="filterMarket('organic')" data-key="filter_org">Organic</button>
+            <button class="filter-btn" onclick="filterMarket('regular')" data-key="filter_reg">Standard</button>
+        </div>
+
+        <div class="grid" id="marketGrid">
+            </div>
+    </section>
+
+    <section class="section bg-light reveal">
+        <h2 class="section-title gradient-text" data-key="nav_docs">System Architecture</h2>
+        
+        <div class="diagram-grid">
+            <div class="diagram-card">
+                <h3 style="text-align: center; margin-bottom: 20px; color: var(--dark);">Database ER Diagram</h3>
+                <div class="mermaid">
+                    erDiagram
+                        FARMER ||--o{ CROP : "lists"
+                        FARMER ||--o{ CONSULTATION : "requests"
+                        OFFICER ||--o{ CONSULTATION : "resolves"
+                        CROP ||--o{ ORDER : "receives"
+                        ORDER ||--|| LOGISTICS : "requires"
+
+                        FARMER {
+                            int farmer_id PK
+                            string name
+                            string phone
+                            string location
+                        }
+                        OFFICER {
+                            int officer_id PK
+                            string name
+                            string department
+                        }
+                        CROP {
+                            int crop_id PK
+                            string name
+                            float price
+                            string type "Organic/Standard"
+                        }
+                        CONSULTATION {
+                            int consult_id PK
+                            string issue_type
+                            string status
+                        }
                 </div>
             </div>
+
+            <div class="diagram-card">
+    <h3 style="text-align: center; margin-bottom: 20px; color: var(--dark);">UML Class Diagram</h3>
+    <div class="mermaid">
+        classDiagram
+            class PlatformUser {
+                +String name
+                +String contact
+                +login()
+            }
+            
+            class Farmer {
+                +String location
+                +addCropListing()
+                +requestConsultation()
+            }
+            
+            class AgriOfficer {
+                +String department
+                +reviewConsultation()
+                +publishGuide()
+            }
+            
+            class CropListing {
+                +String cropName
+                +float price
+                +markAsSold()
+            }
+            
+            class Consultation {
+                +String issueType
+                +String status
+                +assignOfficer()
+                +resolve()
+            }
+
+            Farmer --|> PlatformUser
+            AgriOfficer --|> PlatformUser
+            Farmer --> CropListing : creates
+            Farmer --> Consultation : raises
+            AgriOfficer --> Consultation : handles
+    </div>
+</div>
         </div>
     </section>
 
-    <section id="future" class="section">
-        <div class="container slide-up">
-            <h2 class="section-title">Conclusion & Future Scope</h2>
-            <div class="content-box text-center">
-                <p><strong>Conclusion:</strong> Digitizing the connection between farmers and experts significantly improves the adoption of organic farming and local crop promotion.</p>
-                <hr>
-                <h3>Future Enhancements</h3>
-                <ul class="future-list">
-                    <li>Integrating IoT for live soil moisture tracking.</li>
-                    <li>Adding an e-commerce module for direct-to-consumer sales.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <footer>
+   <footer class="footer reveal">
         <div class="footer-content">
-            <p>SYBCA Community Project</p>
-            <p>Department of Computer Application, K.K. Wagh Arts, Commerce, Science and Computer Science College</p>
+            <h3>SYBCA Community Project</h3>
+            <p>Department of Computer Application, <br> K.K. Wagh Arts, Commerce, Science and Computer Science College</p>
+        </div>
+        <div class="footer-bottom">
             <p>&copy; 2026 Agriculture Awareness System</p>
         </div>
     </footer>
