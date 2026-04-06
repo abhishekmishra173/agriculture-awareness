@@ -85,8 +85,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--secondary); outl
 .tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; background: var(--light); color: var(--dark); margin-bottom: 10px; }
 .tag.organic { background: #d4edda; color: #155724; }
 
-/* --- Mermaid Diagram --- */
-.diagram-wrapper { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center; overflow-x: auto; }
+
 
 /* --- Scroll Animations --- */
 .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
@@ -100,39 +99,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--secondary); outl
     .section { padding: 50px 5%; }
 }
 
-/* --- System Architecture Diagrams --- */
-.diagram-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
-@media (min-width: 992px) {
-    .diagram-grid {
-        grid-template-columns: 1fr 1fr; /* Two columns on large screens */
-    }
-}
-
-.diagram-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    border-top: 4px solid var(--primary);
-    overflow-x: auto; /* Allows scrolling if diagram gets too wide on mobile */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Adjust mermaid container to prevent stretching */
-.diagram-card .mermaid {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
 
 /* --- Footer --- */
 .footer {
